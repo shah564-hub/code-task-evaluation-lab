@@ -2,6 +2,8 @@
 
 An interactive Python coding challenge platform built with Streamlit. Write solutions, run predefined test cases, inspect expected and actual outputs, and review evaluation results through a modern developer-focused interface.
 
+🚀 **[Live Demo — Try CodeLab](https://code-task-evaluation-lab-6bsuvdb7ytq6kkneeyanz3.streamlit.app/)**
+
 ## Overview
 
 CodeLab — Evaluation Studio is a portfolio project exploring how coding assessment tools can evaluate programming solutions and communicate results clearly.
