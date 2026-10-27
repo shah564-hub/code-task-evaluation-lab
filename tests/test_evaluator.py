@@ -92,3 +92,30 @@ def another_function():
 """
     with pytest.raises(ValueError):
         evaluate_code(source, "two_sum", [])
+def test_empty_cases_are_rejected():
+    import pytest
+    from evaluator import evaluate_code
+
+    with pytest.raises(ValueError, match="At least one test case"):
+        evaluate_code(
+            "def solve(x): return x",
+            "solve",
+            [],
+        )
+
+
+def test_more_than_50_cases_are_rejected():
+    import pytest
+    from evaluator import evaluate_code
+
+    cases = [
+        {"name": f"Test {i}", "args": [i], "expected": i}
+        for i in range(51)
+    ]
+
+    with pytest.raises(ValueError, match="maximum of 50"):
+        evaluate_code(
+            "def solve(x): return x",
+            "solve",
+            cases,
+        )

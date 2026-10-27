@@ -181,6 +181,11 @@ def evaluate_code(
       args: positional arguments
       expected: expected return value
     """
+    if not isinstance(cases, list) or not cases:
+        raise ValueError("At least one test case is required.")
+
+    if len(cases) > 50:
+        raise ValueError("A maximum of 50 test cases is allowed.")
 
     tree = validate_code(source)
 
